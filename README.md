@@ -3,7 +3,7 @@ ______________________________________________________
 # RomCom  
 
 ### Abstract:
-We built a romantic comedy book cover application that allows for us to generate new book covers given arrays of data and also to create new book covers using user generated input. Additionally, we have functionality to save covers and view the saved covers in a different display. The display to view saved covers also has interaction -  when you double click any cover it will be removed from the display.
+We built a romantic comedy book cover application that allows for us to generate new book covers with the given arrays of data and also to create new book covers using user generated input. Additionally, we have functionality to save covers and view the saved covers in a different display. The display to view saved covers also has interaction -  when you double click any cover it will be removed from the display.
 
 ### Installation Instructions:
 - Fork this project to your own Github account
@@ -11,7 +11,7 @@ We built a romantic comedy book cover application that allows for us to generate
 - `cd` into the project
 - run `npm install` to install the necessary dependencies
 - Open it in your text editor
-- View the project in the browser by running open index.html in your terminal
+- View the project in the browser by running `open index.html` in your terminal
 
 ### Preview of App:
 ![Preview of App](https://media.giphy.com/media/wLkeo8xIOGqfFpzQVC/giphy.gif)
