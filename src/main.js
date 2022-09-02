@@ -36,7 +36,7 @@ saveCoverSection.addEventListener('dblclick', deleteCover)
 
 
 // Create your event handlers and other functions here 👇
-function randomizeCover(){
+function randomizeCover() {
   var randomCover = new Cover(covers[getRandomIndex(covers)],titles[getRandomIndex(titles)],descriptors[getRandomIndex(descriptors)],descriptors[getRandomIndex(descriptors)])
 
   coverImage.src = randomCover.cover
@@ -47,7 +47,7 @@ function randomizeCover(){
   currentCover = randomCover
 }
 
-function changeToFormView (){
+function changeToFormView () {
   homeView.classList.add('hidden')
   formView.classList.remove('hidden')
   savedCoversView.classList.add('hidden')
@@ -56,7 +56,7 @@ function changeToFormView (){
   homeButton.classList.remove('hidden')
 }
 
-function changeToSavedCoversView(){
+function changeToSavedCoversView() {
   savedCoversView.classList.remove('hidden')
   homeView.classList.add('hidden')
   formView.classList.add('hidden')
@@ -65,7 +65,7 @@ function changeToSavedCoversView(){
   homeButton.classList.remove('hidden')
 }
 
-function changeToHomeView(){
+function changeToHomeView() {
   homeView.classList.remove('hidden')
   formView.classList.add('hidden')
   savedCoversView.classList.add('hidden')
@@ -100,7 +100,7 @@ function createNewBook(event) {
   changeToHomeView()
 }
 
-function saveCover(){
+function saveCover() {
   if (savedCovers[savedCovers.length-1] !== currentCover){
     savedCovers.push(currentCover)
 
@@ -124,7 +124,7 @@ function saveCover(){
     savedTitle.classList.add('cover-title')
     savedDescriptors.classList.add('tagline')
     savedCoverImg.classList.add('mini-cover')
-    
+
   }
 }
 
@@ -139,10 +139,8 @@ function deleteCover(event) {
       savedCovers.splice(i, 1)
     }
   }
-  console.log('HERE', deleteMiniCover)
 }
 
-// We've provided one function to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
