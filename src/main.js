@@ -9,6 +9,7 @@ var descriptor2 = document.querySelector('.tagline-2')
 var homeView = document.querySelector('.home-view')
 var formView = document.querySelector('.form-view')
 var savedCoversView = document.querySelector('.saved-view')
+var saveCoverSection = document.querySelector('.saved-covers-section')
 
 // Buttons
 var showNewRandomCoverButton = document.querySelector('.random-cover-button')
@@ -31,6 +32,8 @@ viewSavedCoversButton.addEventListener('click', changeToSavedCoversView)
 homeButton.addEventListener('click', changeToHomeView)
 createNewBookButton.addEventListener('click', createNewBook)
 saveCoverButton.addEventListener('click', saveCover)
+saveCoverSection.addEventListener('dblclick', deleteCover)
+
 
 // Create your event handlers and other functions here 👇
 function randomizeCover(){
@@ -101,7 +104,6 @@ function saveCover(){
   if (savedCovers[savedCovers.length-1] !== currentCover){
     savedCovers.push(currentCover)
 
-    var saveCoverSection = document.querySelector('.saved-covers-section')
     var savedMiniCover = document.createElement('section')
     var savedCoverImg = document.createElement('img')
     var savedTitle = document.createElement('h2')
@@ -111,6 +113,8 @@ function saveCover(){
     savedMiniCover.appendChild(savedCoverImg)
     savedMiniCover.appendChild(savedTitle)
     savedMiniCover.appendChild(savedDescriptors)
+
+    savedMiniCover.setAttribute('id', currentCover.id)
 
     savedCoverImg.setAttribute('src',currentCover.cover)
     savedTitle.innerText = currentCover.title
@@ -122,6 +126,20 @@ function saveCover(){
     savedCoverImg.classList.add('mini-cover')
     
   }
+}
+
+function deleteCover(event) {
+  var deleteID = event.target.parentElement.id
+
+  var deleteMiniCover = document.getElementById(deleteID)
+  deleteMiniCover.remove()
+
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (savedCovers[i].id == deleteID) {
+      savedCovers.splice(i, 1)
+    }
+  }
+  console.log('HERE', deleteMiniCover)
 }
 
 // We've provided one function to get you started
